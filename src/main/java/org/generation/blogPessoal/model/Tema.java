@@ -25,7 +25,7 @@ public class Tema {
 	private String descricao;
 	
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("Tema")
+	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
 
 	public long getId() {
