@@ -3,7 +3,7 @@ package org.generation.blogPessoal.service;
 import java.nio.charset.Charset;
 import java.util.Optional;
 
-import org.apache.tomcat.util.codec.binary.Base64;
+import org.apache.commons.codec.binary.Base64;
 import org.generation.blogPessoal.model.UserLogin;
 import org.generation.blogPessoal.model.Usuario;
 import org.generation.blogPessoal.repository.UsuarioRepository;

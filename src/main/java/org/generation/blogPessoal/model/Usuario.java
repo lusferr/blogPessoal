@@ -31,7 +31,7 @@ public class Usuario {
 	private String usuario;
 	
 	@NotBlank(message = "Esse campo não pode ser nulo")
-	@Size(min = 5, max = 100, message = "Esse campo deve ter no min 5 e no max 100 caracteres")
+	@Size(min = 5, message = "Esse campo deve ter no min 5")
 	private String senha;
 	
 	@OneToMany (mappedBy = "usuario", cascade = CascadeType.REMOVE)
