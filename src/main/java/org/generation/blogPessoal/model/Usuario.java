@@ -31,13 +31,15 @@ public class Usuario {
 	private String usuario;
 	
 	@NotBlank(message = "Esse campo não pode ser nulo")
-	@Size(min = 5, message = "Esse campo deve ter no min 5")
+	@Size(min = 5, message = "Esse campo deve ter no min 5 caracteres")
 	private String senha;
 	
 	@OneToMany (mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 	
+	
+
 	public Usuario(long id, String nome, String usuario, String senha) {
 		this.id = id;
 		this.nome = nome;
@@ -77,6 +79,14 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	public List<Postagem> getPostagem() {
+		return postagem;
+	}
+
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
 	}
 	
 	
