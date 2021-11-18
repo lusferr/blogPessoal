@@ -9,10 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 @Table(name = "tb_usuario")
@@ -26,8 +29,9 @@ public class Usuario {
 	@Size(min = 3, max = 40, message = "Esse campo deve ter no min 3 e no max 40 caracteres")
 	private String nome;
 	
-	@NotBlank(message = "Esse campo não pode ser nulo")
-	@Size(min = 3, max = 100, message = "Esse campo deve ter no min 3 e no max 100 caracteres")
+	@ApiModelProperty(example = "email@email.com.br")
+	@NotBlank(message = "Esse campo é obrigatório")
+	@Email(message = "O atributo Usuário deve ser um email válido!")
 	private String usuario;
 	
 	@NotBlank(message = "Esse campo não pode ser nulo")
