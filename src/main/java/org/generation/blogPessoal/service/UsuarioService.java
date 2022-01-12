@@ -57,6 +57,8 @@ public class UsuarioService {
 				user.get().setNome(usuario.get().getNome());
 				user.get().setSenha(usuario.get().getSenha());
 				user.get().setToken(token);
+				user.get().setFoto(usuario.get().getFoto());
+				user.get().setTipo(usuario.get().getTipo());
 				
 				return user;
 				}
@@ -86,6 +88,7 @@ public class UsuarioService {
 		String tokenBase = email + ":" + password;
 		byte[] tokenBase64 = Base64.encodeBase64(tokenBase.getBytes(Charset.forName("US-ASCII")));
 		return "Basic " + new String(tokenBase64);
+		
 
 	}
 
